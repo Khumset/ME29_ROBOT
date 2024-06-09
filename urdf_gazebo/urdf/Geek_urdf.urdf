@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Geek_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="69.143" />
+      <inertia
+        ixx="2.2154"
+        ixy="-0.0025911"
+        ixz="-0.014832"
+        iyy="4.0964"
+        iyz="-0.00019758"
+        izz="6.1871" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+ <!--  <link
+    name="laser_link">
+    <visual>
+      <origin
+        xyz="0 0 0.2"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/LidarC1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 3.14" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/LidarC1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint> --> 
+
+  <link
+    name="Wheel_left">
+    <inertial>
+      <origin
+        xyz="-6.9389E-18 -0.0047802 -1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.51791" />
+      <inertia
+        ixx="0.0013666"
+        ixy="-2.4265E-19"
+        ixz="7.1607E-23"
+        iyy="0.0026594"
+        iyz="-5.561E-20"
+        izz="0.0013678" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Wheel_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Wheel_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="Left_joint"
+    type="continuous">
+    <origin
+      xyz="0.245 0.379 0.05155"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Wheel_left" />
+    <axis
+      xyz="0.0003448 1 0" />
+    <limit
+      effort="5"
+      velocity="0.5" />
+  </joint>
+
+  <link
+    name="Wheel_right">
+    <inertial>
+      <origin
+        xyz="6.9389E-18 0.0047802 2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.51791" />
+      <inertia
+        ixx="0.0013666"
+        ixy="-4.6307E-20"
+        ixz="-3.2396E-23"
+        iyy="0.0026594"
+        iyz="2.451E-19"
+        izz="0.0013678" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Wheel_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Wheel_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="Right_joint"
+    type="continuous">
+    <origin
+      xyz="0.24474 -0.37815 0.051545"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Wheel_right" />
+    <axis
+      xyz="0.0003448 1 0" />
+    <limit
+      effort="5"
+      velocity="0.5" />
+  </joint>
+
+  <link
+    name="Castor_left_front">
+    <inertial>
+      <origin
+        xyz="0.011682 6.9065E-08 -0.011757"
+        rpy="0 0 0" />
+      <mass
+        value="0.097819" />
+      <inertia
+        ixx="5.055E-05"
+        ixy="-1.3302E-10"
+        ixz="5.3746E-06"
+        iyy="3.4421E-05"
+        iyz="-1.4675E-10"
+        izz="5.8667E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_left_front.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.83137 0.83922 0.83137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_left_front.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="Castor_joint1"
+    type="continuous">
+    <origin
+      xyz="0.69083 0.0875 0.023042"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Castor_left_front" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="1"
+      velocity="0.01" />
+  </joint>
+
+  <link
+    name="Castor_wl_front">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 5.20417042793042E-17 -5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.399005501589666" />
+      <inertia
+        ixx="7.40208573605513E-05"
+        ixy="-5.20390492817656E-21"
+        ixz="2.46497201431217E-21"
+        iyy="0.000130391911715417"
+        iyz="-3.11348165360462E-22"
+        izz="7.40208573605512E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_wl_front.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_wl_front.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="Castor_w1_joint"
+    type="continuous">
+    <origin
+      xyz="0.023131 0 -0.0365"
+      rpy="0 0 0" />
+    <parent
+      link="Castor_left_front" />
+    <child
+      link="Castor_wl_front" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="5"
+      velocity="0.1" />
+  </joint>
+
+  <link
+    name="Castor_right_front">
+    <inertial>
+      <origin
+        xyz="0.0116818994718002 6.90648813139738E-08 -0.0127572288269465"
+        rpy="0 0 0" />
+      <mass
+        value="0.0978189642093395" />
+      <inertia
+        ixx="5.05495845715848E-05"
+        ixy="-1.3302210269777E-10"
+        ixz="5.37462531907201E-06"
+        iyy="3.44210732908008E-05"
+        iyz="-1.46748010554722E-10"
+        izz="5.86667794924083E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_right_front.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.831372549019608 0.83921568627451 0.831372549019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_right_front.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="Castor_joint2"
+    type="continuous">
+    <origin
+      xyz="0.69083 -0.0875 0.024042"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Castor_right_front" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="1"
+      velocity="0.01" />
+  </joint>
+
+  <link
+    name="Castor_wr_front">
+    <inertial>
+      <origin
+        xyz="0 -1.11022302462516E-16 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.399005501589666" />
+      <inertia
+        ixx="7.40208573605464E-05"
+        ixy="-5.10935611621134E-21"
+        ixz="2.50926908707804E-21"
+        iyy="0.000130391911715417"
+        iyz="-1.30581778499624E-21"
+        izz="7.40208573605464E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_wr_front.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_wr_front.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="Castor_w2_joint"
+    type="continuous">
+    <origin
+      xyz="0.023131 0 -0.0375"
+      rpy="0 0 0" />
+    <parent
+      link="Castor_right_front" />
+    <child
+      link="Castor_wr_front" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="5"
+      velocity="0.1" />
+  </joint>
+
+  <link
+    name="Castor_left_back">
+    <inertial>
+      <origin
+        xyz="-0.0116818994717527 -6.90649586167214E-08 -0.0117572288269669"
+        rpy="0 0 0" />
+      <mass
+        value="0.0978189642089985" />
+      <inertia
+        ixx="5.05495845714093E-05"
+        ixy="-1.33022221774894E-10"
+        ixz="-5.37462531909635E-06"
+        iyy="3.44210732907111E-05"
+        iyz="1.46748047896154E-10"
+        izz="5.86667794921614E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_left_back.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.831372549019608 0.83921568627451 0.831372549019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_left_back.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="Castor_joint3"
+    type="continuous">
+    <origin
+      xyz="-0.1755 0.0875 0.023042"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Castor_left_back" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="1"
+      velocity="0.01" />
+  </joint>
+
+  <link
+    name="Castor_wl_back">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 2.70616862252382E-16 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.399005501589666" />
+      <inertia
+        ixx="7.40208573605609E-05"
+        ixy="-3.97201132329984E-19"
+        ixz="2.02103386869361E-23"
+        iyy="0.000130391911715417"
+        iyz="7.76898286225277E-22"
+        izz="7.40208573605609E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_wl_back.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_wl_back.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="Castor_w3_joint"
+    type="continuous">
+    <origin
+      xyz="-0.023131 0 -0.0365"
+      rpy="0 0 0" />
+    <parent
+      link="Castor_left_back" />
+    <child
+      link="Castor_wl_back" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="5"
+      velocity="0.1" />
+  </joint>
+
+  <link
+    name="Castor_right_back">
+    <inertial>
+      <origin
+        xyz="-0.0116818994718001 -6.90648816192851E-08 -0.0117572288269466"
+        rpy="0 0 0" />
+      <mass
+        value="0.0978189642093409" />
+      <inertia
+        ixx="5.05495845715853E-05"
+        ixy="-1.33022102555175E-10"
+        ixz="-5.37462531907196E-06"
+        iyy="3.4421073290801E-05"
+        iyz="1.46748010772135E-10"
+        izz="5.8666779492409E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_right_back.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.831372549019608 0.83921568627451 0.831372549019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_right_back.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="Castor_joint4"
+    type="continuous">
+    <origin
+      xyz="-0.1755 -0.0875 0.023042"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Castor_right_back" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="1"
+      velocity="0.01" />
+  </joint>
+
+  <link
+    name="Castor_wr_back">
+    <inertial>
+      <origin
+        xyz="0 1.94289029309402E-16 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.399005501589666" />
+      <inertia
+        ixx="7.40208573605554E-05"
+        ixy="-3.97357378475927E-19"
+        ixz="-1.73276773568414E-22"
+        iyy="0.000130391911715417"
+        iyz="3.10633118541421E-22"
+        izz="7.40208573605554E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_wr_back.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_gazebo/model/meshes/Castor_wr_back.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="Castor_w4_joint"
+    type="continuous">
+    <origin
+      xyz="-0.023131 0 -0.0365"
+      rpy="0 0 0" />
+    <parent
+      link="Castor_right_back" />
+    <child
+      link="Castor_wr_back" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="5"
+      velocity="0.1" />
+  </joint>
+
+<gazebo reference="Castor_left_front">  
+    <material>Gazebo/Black</material>
+
+     
+    <mu1 value ="0.05"/>
+    <mu2 value = "0.045"/>
+
+    <kp value = "1000" />
+    <kd value = "100"/>
+</gazebo>
+
+<gazebo reference="Castor_right_front">  
+    <material>Gazebo/Black</material>
+
+     
+    <mu1 value ="0.05"/>
+    <mu2 value = "0.045"/>
+
+    <kp value = "1000" />
+    <kd value = "100"/>
+</gazebo>
+
+<gazebo reference="Castor_left_back">  
+    <material>Gazebo/Black</material>
+
+     
+    <mu1 value ="0.05"/>
+    <mu2 value = "0.045"/>
+
+    <kp value = "1000" />
+    <kd value = "100"/>
+</gazebo>
+
+<gazebo reference="Castor_right_back">  
+    <material>Gazebo/Black</material>
+
+     
+    <mu1 value ="0.05"/>
+    <mu2 value = "0.045"/>
+
+    <kp value = "1000" />
+    <kd value = "100"/>
+</gazebo> 
+  
+<gazebo reference="Wheel_left">  
+<material>Gazebo/YellowGlow</material>
+</gazebo>
+
+<gazebo reference="Wheel_right">  
+<material>Gazebo/YellowGlow</material>
+</gazebo>  
+
+    <gazebo>
+    
+      <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>60</updateRate>
+          <leftJoint>Left_joint</leftJoint>
+          <rightJoint>Right_joint</rightJoint>
+          <wheelSeparation>0.758</wheelSeparation>
+          <wheelDiameter>0.18</wheelDiameter>
+          <torque>6</torque>
+          <commandTopic>cmd_vel</commandTopic>
+          <odometryTopic>odom</odometryTopic>
+          <odometryFrame>odom</odometryFrame>
+          <robotBaseFrame>base_link</robotBaseFrame>
+      </plugin>
+      </gazebo>
+
+</robot>

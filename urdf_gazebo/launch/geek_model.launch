@@ -1,0 +1,16 @@
+<launch>
+  <arg name="model" default="Geek_urdf"/>
+  <!-- Geek_Cover.urdf -->  <!-- Geek_urdf.urdf --> 
+  <param name="robot_description" textfile="$(find urdf_gazebo)/urdf/Geek_Cover.urdf"/> 
+  
+  <!-- send fake joint values -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+    <param name="use_gui" value="TRUE"/>
+  </node>
+
+  <!-- Robot State -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- Show in Rviz   -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find urdf_gazebo)/src/URDF.rviz"/>
+</launch>
